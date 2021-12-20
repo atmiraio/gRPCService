@@ -10,12 +10,16 @@
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.19.1" />
     <PackageReference Include="Grpc.Net.Client" Version="2.40.0" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.40.0" />
     <PackageReference Include="Grpc.Tools" Version="2.41.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-	<ItemGroup>
-		<Protobuf Include="Protos\HelloCommunity.proto" GrpcServices="Client" />
-	</ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\HelloCommunity.proto" GrpcServices="Client">
+      <SourceUri>http://localhost:5172/proto/HelloCommunity.proto</SourceUri>
+    </Protobuf>
+  </ItemGroup>
 </Project>

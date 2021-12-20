@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-option csharp_namespace = "GrpcServiceClient";
+option csharp_namespace = "GrpcServiceServer";
 
 package HelloCommunityPackage;
 
 // The service definition.
 service HelloCommunityService {
   // Endpoints definition
-  rpc SayHello (RequestMessage) returns (RequestReply);
+  rpc SayHello(RequestMessage) returns (RequestReply);
   rpc SayBye(RequestMessage) returns (RequestReply);
 }
 

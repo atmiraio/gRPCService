@@ -1,7 +1,10 @@
-using Grpc.Core;
+        using Grpc.Core;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrpcServiceServer.Services
 {
+    [Authorize(policy: JwtBearerDefaults.AuthenticationScheme)]
     public class HelloCommunityService : GrpcServiceServer.HelloCommunityService.HelloCommunityServiceBase
     {
         private readonly ILogger<HelloCommunityService> _logger;
